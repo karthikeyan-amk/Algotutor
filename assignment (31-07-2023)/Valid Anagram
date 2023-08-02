@@ -1,0 +1,22 @@
+// https://leetcode.com/problems/valid-anagram/submissions/1008218537/
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int[] hash1 = new int[27];
+        int[] hash2 = new int[27];
+        for(int i=0;i<s.length();i++){
+            hash1[s.charAt(i)-'a'] ++;
+        }
+        for(int i=0;i<t.length();i++){
+            hash2[t.charAt(i)-'a'] ++;
+        }
+
+        for(int i=0;i<=26;i++){
+            if(hash1[i]!=hash2[i]){
+                return false;
+            }
+            // System.out.println(hash1[i]+" "+hash2[i]);
+        }
+        return true;
+    }
+}

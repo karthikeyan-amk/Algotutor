@@ -1,0 +1,14 @@
+// https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/submissions/1009953526/
+
+class Solution {
+    public int countNegatives(int[][] grid) {
+        int res = 0,ans = 0;
+        for(int i=0;i<grid.length;i++){
+            for(int j=grid[0].length-1-ans;j>=0 && grid[i][j]<0;j--){
+                ans++;
+            }
+            res +=ans;
+        }
+        return res;
+    }
+}

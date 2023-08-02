@@ -1,0 +1,25 @@
+# hhttps://leetcode.com/problems/valid-palindrome/submissions/1008197326/
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        ans=""
+        try:
+            for i in range(len(strs[0])):
+                flag = 0
+                for j in range(len(strs)):
+                    if(strs[0][i]!=strs[j][i]):
+                        break
+                    else:
+                        flag+=1
+                if(flag!=len(strs)):
+                    break
+                else:
+                    ans+=strs[0][i]
+        except:
+            return ans
+        finally:
+            return ans
